@@ -72,5 +72,6 @@
         }
       ]
     }
-  }
+  },
+  "cmake.sourceDirectory": "/Users/viktor_work/Work/Personal/OnGitHub/Experiments/linux"
 }

@@ -16,9 +16,15 @@ class LoadedPokemonState extends PokemonState {
   const LoadedPokemonState({
     required this.pokemon,
     required this.isPaginating,
+    required this.offset,
+    required this.limit,
+    required this.isAtEnd,
   });
   final PokemonResponse pokemon;
   final bool isPaginating;
+  final int offset;
+  final int limit;
+  final bool isAtEnd;
 }
 
 class ErrorPokemonState extends PokemonState {

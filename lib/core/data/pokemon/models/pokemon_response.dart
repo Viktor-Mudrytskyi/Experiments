@@ -1,4 +1,5 @@
 import 'package:experiments/core/core.dart';
+import 'package:flutter/widgets.dart';
 
 class PokemonResponse {
   PokemonResponse({
@@ -30,5 +31,19 @@ class PokemonResponse {
       'previous': previous,
       'results': results?.map((result) => result.toJson()).toList(),
     };
+  }
+
+  PokemonResponse copyWith({
+    ValueGetter<int?>? count,
+    ValueGetter<String?>? next,
+    ValueGetter<String?>? previous,
+    ValueGetter<List<PokemonModel>?>? results,
+  }) {
+    return PokemonResponse(
+      count: count != null ? count() : this.count,
+      next: next != null ? next() : this.next,
+      previous: previous != null ? previous() : this.previous,
+      results: results != null ? results() : this.results,
+    );
   }
 }

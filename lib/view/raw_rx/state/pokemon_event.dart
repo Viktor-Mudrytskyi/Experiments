@@ -3,15 +3,9 @@ sealed class PokemonEvent {
 }
 
 class LoadPokemonEvent extends PokemonEvent {
-  const LoadPokemonEvent({required this.offset, required this.limit});
-
-  final int offset;
-  final int limit;
+  const LoadPokemonEvent();
 }
 
 class PaginatePokemonEvent extends PokemonEvent {
-  const PaginatePokemonEvent({required this.offset, required this.limit});
-
-  final int offset;
-  final int limit;
+  const PaginatePokemonEvent();
 }
