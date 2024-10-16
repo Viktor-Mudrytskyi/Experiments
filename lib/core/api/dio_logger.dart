@@ -20,7 +20,7 @@ class DioLogger extends Interceptor {
       return;
     }
     Logger.logInfo(
-      '${options.method} ${options.uri}\n${_formatIfJson(options.headers)}\n${_formatIfJson(options.data)}',
+      '${options.method} ${options.uri}\n-----------\n${_formatIfJson(options.headers)}\n-----------\n${_formatIfJson(options.data)}',
     );
     super.onRequest(options, handler);
   }
@@ -31,15 +31,18 @@ class DioLogger extends Interceptor {
       return;
     }
     Logger.logSuccess(
-      '${response.requestOptions.method} ${response.statusCode} ${response.requestOptions.uri}\n${_formatIfJson(response)}',
+      '${response.requestOptions.method} ${response.statusCode} ${response.requestOptions.uri}\n-----------\n${_formatIfJson(response.headers)}\n-----------\n${_formatIfJson(response)}',
     );
     super.onResponse(response, handler);
   }
 
   String _formatIfJson(Object? data) {
     try {
-      final map = jsonDecode(data.toString());
       const JsonEncoder encoder = JsonEncoder.withIndent('  ');
+      if (data is Map) {
+        return encoder.convert(data);
+      }
+      final map = jsonDecode(data.toString());
       return encoder.convert(map);
     } catch (e) {
       return data.toString();
