@@ -15,14 +15,6 @@ class PokemonApi {
         'offset': offset,
         'limit': limit,
       },
-      data: {
-        'results': [
-          {
-            'name': 'bulbasaur',
-            'url': 'https://pokeapi.co/api/v2/pokemon/1/',
-          }
-        ],
-      },
     ) as Map<String, dynamic>;
     return response;
   }
