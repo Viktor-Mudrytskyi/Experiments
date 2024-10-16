@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: const [
             BatteryScreen(),
             RxScreen(),
+            HeroScreen(),
           ],
         ),
       ),
@@ -42,6 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.r_mobiledata_outlined),
             label: 'RxDart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.heart_broken_outlined),
+            label: 'Hero',
           ),
         ],
         onTap: _onItemTapped,

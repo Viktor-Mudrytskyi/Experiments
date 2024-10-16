@@ -1,4 +1,4 @@
-import 'package:experiments/core/data/pokemon/models/pokemon_response.dart';
+import 'package:experiments/data/pokemon/models/pokemon_response.dart';
 
 sealed class PokemonState {
   const PokemonState();
