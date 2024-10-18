@@ -5,3 +5,4 @@ export 'battery/battery.dart';
 export 'hero/hero.dart';
 export 'home/home.dart';
 export 'raw_rx/raw_rx.dart';
+export 'unknown/unknown.dart';

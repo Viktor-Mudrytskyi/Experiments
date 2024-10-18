@@ -23,17 +23,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: LazyLoadIndexedStack(
-          index: _index,
-          children: const [
-            BatteryScreen(),
-            RxScreen(),
-            HeroScreen(),
-          ],
-        ),
+      body: LazyLoadIndexedStack(
+        index: _index,
+        children: const [
+          BatteryScreen(),
+          RxScreen(),
+          HeroScreen(),
+          UnknownScreen(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: _index,
         items: const [
           BottomNavigationBarItem(
@@ -47,6 +47,10 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.heart_broken_outlined),
             label: 'Hero',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.device_unknown),
+            label: 'Unknown',
           ),
         ],
         onTap: _onItemTapped,
